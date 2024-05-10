@@ -1,14 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:654654381120:task-definition/ctse-user-service-task-definition:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:654654381120:task-definition/ctse-user-service-task-definition:2",
     "containerDefinitions": [
         {
-            "name": "user-service",
+            "name": "ctse-user-service-container",
             "image": "654654381120.dkr.ecr.us-east-1.amazonaws.com/ctse-user-service:latest",
             "cpu": 0,
-            "memory": 2048,
             "portMappings": [
                 {
-                    "name": "container-port",
+                    "name": "ctse-container-port-name",
                     "containerPort": 8080,
                     "hostPort": 8080,
                     "protocol": "tcp",
@@ -35,10 +34,10 @@
         }
     ],
     "family": "ctse-user-service-task-definition",
-    "taskRoleArn": "arn:aws:iam::654654381120:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::654654381120:role/ctse-ecs-task-role",
     "executionRoleArn": "arn:aws:iam::654654381120:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -84,7 +83,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-05-10T11:17:47.827Z",
+    "registeredAt": "2024-05-10T21:21:33.016Z",
     "registeredBy": "arn:aws:iam::654654381120:root",
     "tags": []
 }
