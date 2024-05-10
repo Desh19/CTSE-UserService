@@ -1,13 +1,14 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:654654381120:task-definition/Ctse_UserService:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:654654381120:task-definition/ctse-user-service-task-definition:1",
     "containerDefinitions": [
         {
-            "name": "userService",
-            "image": "654654381120.dkr.ecr.eu-north-1.amazonaws.com/ctse_userservice:latest",
+            "name": "user-service",
+            "image": "654654381120.dkr.ecr.us-east-1.amazonaws.com/ctse-user-service:latest",
             "cpu": 0,
+            "memory": 2048,
             "portMappings": [
                 {
-                    "name": "container_port",
+                    "name": "container-port",
                     "containerPort": 8080,
                     "hostPort": 8080,
                     "protocol": "tcp",
@@ -24,8 +25,8 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/Ctse_UserService",
-                    "awslogs-region": "eu-north-1",
+                    "awslogs-group": "/ecs/ctse-user-service-task-definition",
+                    "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 },
                 "secretOptions": []
@@ -33,8 +34,8 @@
             "systemControls": []
         }
     ],
-    "family": "Ctse_UserService",
-    "taskRoleArn": "arn:aws:iam::654654381120:role/User_Service",
+    "family": "ctse-user-service-task-definition",
+    "taskRoleArn": "arn:aws:iam::654654381120:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::654654381120:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
@@ -83,7 +84,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-23T16:08:54.794Z",
+    "registeredAt": "2024-05-10T11:17:47.827Z",
     "registeredBy": "arn:aws:iam::654654381120:root",
     "tags": []
 }
